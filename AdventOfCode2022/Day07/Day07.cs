@@ -43,7 +43,7 @@ public class Day07
     {
         var current = root;
 
-        foreach (var data in File.ReadAllLines("C:\\Temp\\advent\\input-day7.txt"))
+        foreach (var data in File.ReadAllLines($"{Environment.CurrentDirectory}\\day07\\input-day7.txt"))
         {
             if (data.StartsWith("$"))
             {

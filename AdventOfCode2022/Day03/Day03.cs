@@ -8,7 +8,7 @@ public class Day03
     {
         var total = 0;
 
-        foreach (var rucksack in File.ReadAllLines("C:\\Temp\\advent\\input-day3.txt"))
+        foreach (var rucksack in File.ReadAllLines($"{Environment.CurrentDirectory}\\day03\\input-day3.txt"))
         {
             var compartment1 = rucksack.Substring(0, (rucksack.Length / 2));
             var compartment2 = rucksack.Substring(rucksack.Length / 2);
@@ -57,7 +57,7 @@ public class Day03
         var total = 0;
         var group = new List<string>();
 
-        foreach (var rucksack in File.ReadAllLines("C:\\Temp\\advent\\input-day3.txt"))
+        foreach (var rucksack in File.ReadAllLines($"{Environment.CurrentDirectory}\\day03\\input-day3.txt"))
         {
             group.Add(rucksack);
 

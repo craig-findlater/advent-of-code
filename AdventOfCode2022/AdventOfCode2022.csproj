@@ -1,0 +1,78 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="Day01\" />
+    <Folder Include="Day02\" />
+    <Folder Include="Day03\" />
+    <Folder Include="Day04\" />
+    <Folder Include="Day06\" />
+    <Folder Include="Day07\" />
+    <Folder Include="Day08\" />
+    <Folder Include="Day11\" />
+    <Folder Include="Day12\" />
+    <Folder Include="Day13\" />
+    <Folder Include="Day14\" />
+    <Folder Include="Day15\" />
+    <Folder Include="Day16\" />
+    <Folder Include="Day17\" />
+    <Folder Include="Day18\" />
+    <Folder Include="Day19\" />
+    <Folder Include="Day20\" />
+    <Folder Include="Day21\" />
+    <Folder Include="Day22\" />
+    <Folder Include="Day23\" />
+    <Folder Include="Day24\" />
+    <Folder Include="Day25\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Day01\input-day1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Day02\input-day2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Day03\input-day3.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Day04\input-day4.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Day05\input-day5-crates.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Day05\input-day5.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Day06\input-day6.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Day07\input-day7-demo.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Day07\input-day7.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Day08\input-day8-demo.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Day08\input-day8.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Day09\input-day9-demo.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Day09\input-day9.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

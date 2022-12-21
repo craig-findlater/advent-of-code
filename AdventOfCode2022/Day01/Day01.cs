@@ -7,7 +7,7 @@ public class Day1
         var elfCalories = 0;
         var maxCalories = 0;
 
-        foreach (var line in File.ReadAllLines("C:\\Temp\\advent\\input-day1.txt"))
+        foreach (var line in File.ReadAllLines($"{Environment.CurrentDirectory}\\day01\\input-day1.txt"))
         {
             int lineCalories;
             if (int.TryParse(line, out lineCalories))
@@ -31,7 +31,7 @@ public class Day1
         var elfCalories = 0;
         var elfs = new List<int>();
 
-        foreach (var line in File.ReadAllLines("C:\\Temp\\advent\\input-day1.txt"))
+        foreach (var line in File.ReadAllLines($"{Environment.CurrentDirectory}\\day01\\input-day1.txt"))
         {
             int lineCalories;
             if (int.TryParse(line, out lineCalories))

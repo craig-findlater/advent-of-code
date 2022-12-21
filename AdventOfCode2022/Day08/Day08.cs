@@ -43,8 +43,8 @@ public class Day08
 
     private static int[,] GetInput()
     {
-        var data = File.ReadAllText("C:\\Temp\\advent\\input-day8.txt");
-        //var data = File.ReadAllText("C:\\Temp\\advent\\input-day8-demo.txt");
+        var data = File.ReadAllText($"{Environment.CurrentDirectory}\\day08\\input-day8.txt");
+        //var data = File.ReadAllText($"{Environment.CurrentDirectory}\\day08\\input-day8.txt");
 
         var rows = data.Split("\r\n");
 
@@ -186,7 +186,7 @@ public class Day08
     {
         var trees = new List<Tree>();
 
-        var data = File.ReadAllText("C:\\Temp\\advent\\input-day8.txt");
+        var data = File.ReadAllText($"{Environment.CurrentDirectory}\\day08\\input-day8.txt");
         var rows = data.Split("\r\n");
         
         for (var r = 0; r < rows.Count(); r++)

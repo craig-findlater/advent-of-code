@@ -10,7 +10,7 @@ public class Day05
     {
         var stacks = InitStacks();
 
-        foreach (var movement in File.ReadAllLines("C:\\Temp\\advent\\input-day5-movement.txt"))
+        foreach (var movement in File.ReadAllLines($"{Environment.CurrentDirectory}\\day05\\input-day5.txt"))
         {
             var m = Regex.Match(movement, @"move (\d*) from (\d*) to (\d*)");
 
@@ -39,7 +39,7 @@ public class Day05
     {
         var stacks = InitStacks();
 
-        foreach (var movement in File.ReadAllLines("C:\\Temp\\advent\\input-day5-movement.txt"))
+        foreach (var movement in File.ReadAllLines($"{Environment.CurrentDirectory}\\day05\\input-day5.txt"))
         {
             var m = Regex.Match(movement, @"move (\d*) from (\d*) to (\d*)");
 
@@ -81,7 +81,7 @@ public class Day05
             stacks[i] = new Stack<char>();
         }
 
-        var data = File.ReadAllLines("C:\\Temp\\advent\\input-day5-crates.txt");
+        var data = File.ReadAllLines($"{Environment.CurrentDirectory}\\day05\\input-day5-crates.txt");
 
         for(int r = data.Count() - 2; r >= 0; r--)
         {            

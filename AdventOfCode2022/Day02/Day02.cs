@@ -13,7 +13,7 @@ public class Day02
     {
         var score = 0;
 
-        foreach (var game in File.ReadAllLines("C:\\Temp\\advent\\input-day2.txt"))
+        foreach (var game in File.ReadAllLines($"{Environment.CurrentDirectory}\\day02\\input-day2.txt"))
         {
             var results = game.Split(" ");
             score += GetScorePart1(results[0], results[1]);
@@ -53,7 +53,7 @@ public class Day02
     {
         var score = 0;
 
-        foreach (var game in File.ReadAllLines("C:\\Temp\\advent\\input-day2.txt"))
+        foreach (var game in File.ReadAllLines($"{Environment.CurrentDirectory}\\day02\\input-day2.txt"))
         {
             var results = game.Split(" ");
             score += GetScorePart2(results[0], results[1]);

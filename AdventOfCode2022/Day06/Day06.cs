@@ -4,7 +4,7 @@ public class Day06
 {
     public static void Part1()
     {
-        var data = File.ReadAllText("C:\\Temp\\advent\\input-day6.txt");
+        var data = File.ReadAllText($"{Environment.CurrentDirectory}\\day06\\input-day6.txt");
                
         var index = 0;        
         var markerQueue = new Queue<char>();
@@ -31,7 +31,7 @@ public class Day06
 
     public static void Part2()
     {
-        var data = File.ReadAllText("C:\\Temp\\advent\\input-day6.txt");
+        var data = File.ReadAllText($"{Environment.CurrentDirectory}\\day06\\input-day6.txt");
 
         var index = 0;
         var markerQueue = new Queue<char>();

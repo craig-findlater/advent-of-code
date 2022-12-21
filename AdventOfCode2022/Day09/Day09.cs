@@ -6,8 +6,8 @@ public class Day09
 {
     public static void Part1()
     {
-        //var instructions = File.ReadAllText("C:\\Temp\\advent\\input-day9.txt");
-        var instructions = File.ReadAllText("C:\\Temp\\advent\\input-day9-demo.txt");
+        //var instructions = File.ReadAllText($"{Environment.CurrentDirectory}\\day09\\input-day9.txt");
+        var instructions = File.ReadAllText($"{Environment.CurrentDirectory}\\day09\\input-day9.txt");
 
         var rope = new Rope(50, 50);
 
@@ -49,7 +49,7 @@ public class Day09
             switch (direction)
             {
                 case "L":
-                    this.Head -= 1;
+                    //this.Head -= 1;
                     break;
 
                 case "R":

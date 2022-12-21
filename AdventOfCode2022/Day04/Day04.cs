@@ -9,7 +9,7 @@ public class Day04
     {
         var total = 0;
 
-        foreach (var data in File.ReadAllLines("C:\\Temp\\advent\\input-day4.txt"))
+        foreach (var data in File.ReadAllLines($"{Environment.CurrentDirectory}\\day04\\input-day4.txt"))
         {
             var elfAssignments = data.Split(",");
 
@@ -28,7 +28,7 @@ public class Day04
     {
         var total = 0;
 
-        foreach (var data in File.ReadAllLines("C:\\Temp\\advent\\input-day4.txt"))
+        foreach (var data in File.ReadAllLines($"{Environment.CurrentDirectory}\\day04\\input-day4.txt"))
         {
             var elfAssignments = data.Split(",");
 
