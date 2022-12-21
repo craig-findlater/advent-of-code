@@ -22,7 +22,7 @@ public class Day08
         Console.WriteLine();
     }
 
-    public static void Part2_PreviousAttempt()
+    public static void Part2()
     {
         var highest = 0;
         var input = GetInput();
@@ -106,7 +106,6 @@ public class Day08
         var bottom = 0;
         var rowCount = input.GetLength(0);
         var columnCount = input.GetLength(1);
-        var prev = 0;
         var treeHeight = input[row, col];
 
         // check border
@@ -114,101 +113,30 @@ public class Day08
 
         // check left
         for (var i = col - 1; i >= 0; i--)
-        {
-            if (input[row, i] > prev)
-            {
-                left++;
-                prev = input[row, i];
-                if (input[row, i] >= treeHeight) break;
-            }
-            else break;
+        {            
+            left++;
+            if (input[row, i] >= treeHeight) break;            
         }
         // check right
-        prev = 0;
         for (var i = col + 1; i < columnCount; i++)
         {
-            if (input[row, i] > prev)
-            {
-                right++;
-                prev = input[row, i];
-                if (input[row, i] >= treeHeight) break;
-            }
-            else break;
+            right++;
+            if (input[row, i] >= treeHeight) break;
         }
         // check top
-        prev = 0;
         for (var i = row - 1; i >= 0; i--)
         {
-            if (input[i, col] > prev)
-            {
-                top++;
-                prev = input[i, col];
-                if (input[i, col] >= treeHeight) break;
-            }
-            else break;
+            top++;
+            if (input[i, col] >= treeHeight) break;
         }
         // check bottom
-        prev = 0;
         for (var i = row + 1; i < rowCount; i++)
         {
-            if (input[i, col] > prev)
-            {
-                bottom++;
-                prev = input[i, col];
-                if (input[i, col] >= treeHeight) break;
-            }
-            else break;
+            bottom++;
+            if (input[i, col] >= treeHeight) break;
         }
 
         return left * right * top * bottom;
     }
-
-
-
-    public static void Part2()
-    {
-        var trees = GetTrees();
-        var maxScore = 0;
-
-        foreach (var t in trees)
-        {
-            var score = t.GetScore(trees);
-
-            if (score > maxScore) maxScore = score;
-        }
-
-        Console.WriteLine("Day 8 - Part 2");
-        Console.WriteLine(maxScore);
-        Console.WriteLine();
-    }
-
-    private static List<Tree> GetTrees()
-    {
-        var trees = new List<Tree>();
-
-        var data = File.ReadAllText($"{Environment.CurrentDirectory}\\day08\\input-day8.txt");
-        var rows = data.Split("\r\n");
-        
-        for (var r = 0; r < rows.Count(); r++)
-        {
-            for (var c = 0; c < rows[r].Length; c++)
-            {
-                trees.Add(new Tree(int.Parse(rows[r][c]!.ToString()), r, c));                
-            }
-        }
-
-        return trees;
-
-    }
     
-    public record Tree(int Height, int Row, int Col)
-    {
-        public int GetScore(List<Tree>  trees)
-        {
-
-            return 0;
-        }
-    }
-
-
 }
