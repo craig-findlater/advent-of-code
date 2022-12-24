@@ -26,9 +26,20 @@ public class Day09
 
     public static void Part2()
     {
+        var instructions = File.ReadAllText($"{Environment.CurrentDirectory}\\day09\\input-day9.txt");
+        //var instructions = File.ReadAllText($"{Environment.CurrentDirectory}\\day09\\input-day9-demo-part2.txt");
+
+        var rope = new RopeWithKnots(0, 0);
+
+        foreach (string data in instructions.Split("\r\n"))
+        {
+            var instruction = data.Split(" ");
+
+            rope.Move(instruction[0], int.Parse(instruction[1]));
+        }
 
         Console.WriteLine("Day 9 - Part 2");
-        Console.WriteLine();
+        Console.WriteLine(rope.TailPositions.Count);
         Console.WriteLine();
     }
 
@@ -40,7 +51,7 @@ public class Day09
         public Rope(int startX, int startY)
         {
             Head = new Position(startX, startY);
-            Tail = new Position(startX, startY);
+            Tail = new Position(startX, startY);            
             TailPositions = new List<Position>();
             TailPositions.Add(new Position(Tail.X, Tail.Y));
         }
@@ -134,6 +145,117 @@ public class Day09
 
         }
         
+    }
+
+    public class RopeWithKnots
+    {
+        public List<Position> Knots { get; private set; }    
+        public Position Head { get => Knots.First(); }
+        public Position Tail { get => Knots.Last(); }
+
+        public RopeWithKnots(int startX, int startY)
+        {
+            Knots = new List<Position>();
+            for (int i = 0; i < 10; i++)
+            {
+                Knots.Add(new Position(startX, startY));
+            }            
+            TailPositions = new List<Position>();
+            TailPositions.Add(new Position(startX, startY));
+        }
+
+        public List<Position> TailPositions { get; protected set; }
+
+        public void Move(string direction, int distance)
+        {
+            for (var i = 0; i < distance; i++)
+            {
+                switch (direction)
+                {
+                    case "L":
+                        Head.X--;
+                        break;
+
+                    case "R":
+                        Head.X++;
+                        break;
+
+                    case "U":
+                        Head.Y--;
+                        break;
+
+                    case "D":
+                        Head.Y++;
+                        break;
+                }
+
+                for (var j = 1; j < Knots.Count; j++)
+                {
+                    if (!Knots[j - 1].IsAdjacent(Knots[j])) MakeAdjacent(Knots[j - 1], Knots[j]);
+                }
+
+                if (!TailPositions.Contains(Tail)) TailPositions.Add(new Position(Tail.X, Tail.Y));
+            }
+        }
+
+        private void MakeAdjacent(Position pos1, Position pos2)
+        {
+            // in the same row
+            if (pos1.X == pos2.X)
+            {
+                if (pos1.X - pos2.X >= 2)
+                {
+                    pos2.X++;
+                }
+                else if (pos1.X - pos2.X <= 2)
+                {
+                    pos2.X--;
+                }
+            }
+
+            // in the same column
+            if (pos1.Y == pos2.Y)
+            {
+                if (Head.Y - pos2.Y >= 2)
+                {
+                    pos2.Y++;
+                }
+                else if (pos1.Y - pos2.Y <= 2)
+                {
+                    pos2.Y--;
+                }
+            }
+
+            // diagonally adjacent - top left
+            if (pos1.X < pos2.X && pos1.Y < pos2.Y)
+            {
+                pos2.X--;
+                pos2.Y--;
+            }
+
+            // diagonally adjacent - top right
+            if (pos1.X > pos2.X && pos1.Y < pos2.Y)
+            {
+                pos2.X++;
+                pos2.Y--;
+            }
+
+            // diagonally adjacent - bottom left
+            if (pos1.X < pos2.X && pos1.Y > pos2.Y)
+            {
+                pos2.X--;
+                pos2.Y++;
+            }
+
+            // diagonally adjacent - bottom right
+            if (pos1.X > pos2.X && pos1.Y > pos2.Y)
+            {
+                pos2.X++;
+                pos2.Y++;
+            }                        
+
+        }
+
     }
 
     public class Position : IEquatable<Position> 
