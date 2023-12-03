@@ -3,23 +3,18 @@ using System.Text.RegularExpressions;
 
 namespace AdventOfCode2023.Day02;
 
-internal static class Day02
+internal static class Day03
 {
     public static void Part1()
     {
         int total = 0;
-        int maxBlue = 0;
-        int maxGreen = 0;
-        int maxRed = 0;
-
         foreach (string line in Input.ReadInput(2))
         {
             var game = Regex.Match(line, @"Game\s(\d*):\s(.*)");
 
-            maxBlue = 0;
-            maxGreen = 0;
-            maxRed = 0;
-
+            int maxBlue = 0;
+            int maxGreen = 0;
+            int maxRed = 0;
             var reveals = game.Groups[2].Value.Split(";");
 
             foreach (var reveal in reveals)
@@ -43,31 +38,16 @@ internal static class Day02
         Output.Write(2, 1, total);
     }
 
-    public static int GetRevealedAmount(string input, string regex)
-    {
-        var m = Regex.Match(input, regex);
-        if (m.Success)
-        {
-            return int.Parse(m.Groups[1].Value);
-        }
-        return 0;
-    }
-
     public static void Part2()
     {
         int total = 0;
-        int maxBlue = 0;
-        int maxGreen = 0;
-        int maxRed = 0;
-
         foreach (string line in Input.ReadInput(2))
         {
             var game = Regex.Match(line, @"Game\s(\d*):\s(.*)");
 
-            maxBlue = 0;
-            maxGreen = 0;
-            maxRed = 0;
-
+            int maxBlue = 0;
+            int maxGreen = 0;
+            int maxRed = 0;
             var reveals = game.Groups[2].Value.Split(";");
 
             foreach (var reveal in reveals)
@@ -83,9 +63,18 @@ internal static class Day02
             }
 
             total += (maxBlue * maxGreen * maxRed);
-
         }
 
-        Output.Write(2, 1, total);
+        Output.Write(2, 2, total);
+    }
+
+    public static int GetRevealedAmount(string input, string regex)
+    {
+        var m = Regex.Match(input, regex);
+        if (m.Success)
+        {
+            return int.Parse(m.Groups[1].Value);
+        }
+        return 0;
     }
 }
