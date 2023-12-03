@@ -7,7 +7,7 @@ internal static class Day01
     public static void Part1()
     {
         int total = 0;
-        foreach (string line in Input.ReadDayInput(1))
+        foreach (string line in Input.ReadInput(1))
         {
             var f = line.ToCharArray().Where(x => char.IsNumber(x)).FirstOrDefault();
             var l = line.ToCharArray().Where(x => char.IsNumber(x)).LastOrDefault();
@@ -23,7 +23,7 @@ internal static class Day01
     public static void Part2()
     {
         int total = 0;
-        foreach (string line in Input.ReadDayInput(1))
+        foreach (string line in Input.ReadInput(1))
         {
             var f = GetFirstNumber(line);
             var l = GetLastNumber(line);
