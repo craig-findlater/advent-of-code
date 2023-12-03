@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace AdventOfCode2023.Day02;
 
-internal static class Day03
+internal static class Day02
 {
     public static void Part1()
     {
